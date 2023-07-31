@@ -15,8 +15,8 @@ app.use(cors());
 //init to DB
 connectToDb();
 
-app.get('/', (req, res) => {
-	res.send('Welcome to the world');
-});
+const userRoutes = require('./routes/userRoutes.js');
+
+app.use('/', userRoutes);
 
 module.exports = app;
